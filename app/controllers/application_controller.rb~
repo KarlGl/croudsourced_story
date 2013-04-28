@@ -1,0 +1,8 @@
+class ApplicationController < ActionController::Base
+  protect_from_forgery
+  def index
+#    headers "Content-Type" => "text/json"
+    @objects = Word.find(:all)
+    render :json =>  @objects.to_json
+  end
+end
